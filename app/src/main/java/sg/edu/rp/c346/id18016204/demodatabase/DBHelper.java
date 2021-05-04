@@ -74,11 +74,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public ArrayList<Task> getTasks() {
         // Create an ArrayList that holds String objects
-        ArrayList<Task> tasks = new ArrayList<Task>();
+        ArrayList<Task> tasks = new ArrayList<>();
         // Select all the tasks' description
-        String selectQuery = "SELECT " + COLUMN_DESCRIPTION
-                + " FROM " + TABLE_TASK;
-
+        String selectQuery = "SELECT " + COLUMN_ID + ", " +
+                COLUMN_DESCRIPTION + ", " + COLUMN_DATE + " FROM " + TABLE_TASK;
         // Get the instance of database to read
         SQLiteDatabase db = this.getReadableDatabase();
         // Run the SQL query and get back the Cursor object
